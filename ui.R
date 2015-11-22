@@ -15,7 +15,15 @@ shinyUI(
                         label = h3("Order of magnitude"), 
                         choices = list("mol (M)", "milimol (mM)", "micromol (uM)", "nanomol (nM)"),
                         selected = "micromol (uM)"),
-            submitButton('Calculate'))
+            submitButton('Calculate')),
+            
+            column(3,
+                   h3("About"),
+                   h4("This application is designed to calculate the required amount of solvent for a solution."),
+                   h4("The user should enter the amount to be solubilised in gramms and the molecular weight of the material."),
+                   h4("After having set the aimed concentration, the user should click on the 'Calculate' button"),
+                   h4("The app returns the input data and the required volume of solvent in mililiters.")
+            )
         ),
     mainPanel(
         h3('Result of the calculation'),
@@ -25,3 +33,6 @@ shinyUI(
         verbatimTextOutput("vol")
         ))
 )
+   
+
+    
