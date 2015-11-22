@@ -1,6 +1,6 @@
 name<-c("mol (M)", "milimol (mM)", "micromol (uM)", "nanomol (nM)")
 multiplier<-as.numeric()
-multiplier<-c(1, 1000, 1000000, 1000000000)
+multiplier<-c(1, 0.001, 0.000001, 0.000000001)
 conc<-cbind(name, multiplier)
 conc<-as.data.frame(conc)
 conc$multiplier<-as.numeric(as.character(conc$multiplier))
@@ -18,6 +18,6 @@ shinyServer(
             paste(input$m, "g; ", input$M, "daltons; ", input$c1, input$c10)
         })
         
-        output$vol<-renderText({paste (v(), "ml")})
+        output$vol<-renderText({paste (v(), "l")})
     }
 )
